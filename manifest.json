@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "Typeracer injection",
+  "version": "3.0",
+  "content_scripts": [
+    {
+    "matches": ["http://play.typeracer.com/"],
+    "js": ["typer.js"]
+    }
+  ],
+
+  "web_accessible_resources": ["script.js"]
+}
