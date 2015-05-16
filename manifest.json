@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
 
-  "name": "Typeracer injection",
+  "name": "10 Fast Fingers injection",
   "version": "3.0",
   "content_scripts": [
     {
-    "matches": ["http://play.typeracer.com/"],
+    "matches": ["http://10fastfingers.com/typing-test/english"],
     "js": ["typer.js"]
     }
   ],

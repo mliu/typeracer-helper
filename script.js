@@ -1,9 +1,26 @@
+var currentlyRunning = false;
 window.onkeypress = function(event){
-  if (event.keyCode == 32){
-    var text = document.getElementById("nhwMiddlegwt-uid-8").innerHTML;
-    var comma = document.getElementById("nhwMiddleCommagwt-uid-9").innerHTML;
-    textBox = document.getElementsByClassName("txtInput")[0];
-    textBox.value = text + comma;
-    console.log('"' + text + comma + '"');
-  }
+	event.preventDefault();
+	if (event.keyCode == 32){
+		var textBox = document.getElementById("inputfield");
+    	var text = document.getElementsByClassName("highlight")[0];
+    	typeOut(text.innerHTML, textBox);
+  	}
+}
+
+window.typeOut = function(text, textBox){
+	console.log(text + " " + textBox);
+	if(currentlyRunning) {
+		return;
+	}
+	var i = 0;
+	currentlyRunning = true;
+	var interval = setInterval(function(){
+		textBox.value += text[i];
+		i++;
+		if(i == text.length){
+			clearInterval(interval);
+			currentlyRunning = false;
+		}
+	}, 5);
 }
